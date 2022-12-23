@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-mod5-phonebook/static/css/main.213181b6.css",
+    "main.js": "/react-mod5-phonebook/static/js/main.2b70bf0d.js",
+    "index.html": "/react-mod5-phonebook/index.html",
+    "main.213181b6.css.map": "/react-mod5-phonebook/static/css/main.213181b6.css.map",
+    "main.2b70bf0d.js.map": "/react-mod5-phonebook/static/js/main.2b70bf0d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.213181b6.css",
+    "static/js/main.2b70bf0d.js"
+  ]
+}
