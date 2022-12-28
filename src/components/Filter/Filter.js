@@ -1,20 +1,22 @@
-import React, { Component } from 'react';
-import s from './Filter.module.css';
-import { PropTypes } from 'prop-types';
+import React, { Component } from "react";
+import s from "./Filter.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { filterContacts } from "../../redux/contactsReducer";
+import { getFilter } from "../../redux/contactsActions";
 
-const Filter = ({ value, onChengeFilter }) => {
-  // console.log(onChengeFilter);
+const Filter = () => {
+  const filter = useSelector(getFilter);
+  const dispatch = useDispatch();
+
+  function filterName(event) {
+    dispatch(filterContacts(event.currentTarget.value));
+  }
   return (
     <div>
       <label className={s.filter}>Filter</label>
-      <input type="text" value={value} onChange={onChengeFilter} />
+      <input type="text" value={filter} onChange={filterName} />
     </div>
   );
-};
-
-Filter.prototype = {
-  value: PropTypes.string,
-  onChengeFilter: PropTypes.func,
 };
 
 export default Filter;

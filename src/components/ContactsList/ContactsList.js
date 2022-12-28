@@ -1,21 +1,27 @@
-import React, { Component } from 'react';
-import s from './ContactsList.module.css';
-import shortid from 'shortid';
-import PropTypes from 'prop-types';
+// import React, { Component } from "react";
+import s from "./ContactsList.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { deleteContacts } from "../../redux/contactsReducer";
+import { getFilter, getContacts } from "../../redux/contactsActions";
 
-const ContactsList = ({ contacts, deleteContact }) => {
-  // console.log(deleteContact);
+const ContactsList = () => {
+  const contacts = useSelector(getContacts);
+  const filter = useSelector(getFilter);
+  const dispatch = useDispatch();
+
+  const visibleContacts = contacts.filter((contact) =>
+    contact.name.toLowerCase().includes(filter.toLowerCase().trim())
+  );
+
   return (
     <div className={s.contactsList}>
       <h2 className={s.text}>CONTACTS</h2>
-      {contacts.map(contact => (
+      {visibleContacts.map((contact) => (
         <li className={s.contact} key={contact.id}>
-          {contact.name} : {contact.number}{' '}
+          {contact.name} : {contact.number}{" "}
           <button
             type="buttun"
-            onClick={() => {
-              deleteContact(contact.id);
-            }}
+            onClick={() => dispatch(deleteContacts(contact.id))}
           >
             Delete
           </button>
@@ -23,17 +29,6 @@ const ContactsList = ({ contacts, deleteContact }) => {
       ))}
     </div>
   );
-};
-
-ContactsList.prototype = {
-  contacts: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      number: PropTypes.string,
-    })
-  ),
-  deleteContact: PropTypes.func,
 };
 
 export default ContactsList;
