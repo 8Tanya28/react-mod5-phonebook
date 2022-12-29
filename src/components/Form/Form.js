@@ -1,8 +1,8 @@
-// import React, { Component } from 'react';
+import React from 'react';
 import s from './Form.module.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addContacts } from '../../redux/contactsReducer';
+import { addContacts } from '../../redux/contactsSlice';
 
 function Form() {
   const [name, setName] = useState('');

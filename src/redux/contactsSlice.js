@@ -1,16 +1,16 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { nanoid } from "nanoid";
+import { createSlice } from '@reduxjs/toolkit';
+import { nanoid } from 'nanoid';
 
 export const contactsSlice = createSlice({
-  name: "contacts",
+  name: 'contacts',
   initialState: {
     contacts: [
-      { id: "id-1", name: "Natasha", number: "050 123 12 12" },
-      { id: "id-2", name: "Tanya", number: "098 124 15 25" },
-      { id: "id-3", name: "Inna", number: "066 245 16 92" },
-      { id: "id-4", name: "Svitlana", number: "093 384 39 44" },
+      { id: 'id-1', name: 'Natasha', number: '050 123 12 12' },
+      { id: 'id-2', name: 'Tanya', number: '098 124 15 25' },
+      { id: 'id-3', name: 'Inna', number: '066 245 16 92' },
+      { id: 'id-4', name: 'Svitlana', number: '093 384 39 44' },
     ],
-    filter: "",
+    filter: '',
   },
   reducers: {
     addContacts: {

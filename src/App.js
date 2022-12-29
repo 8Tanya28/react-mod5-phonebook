@@ -1,17 +1,19 @@
-// import React, { Component } from 'react';
-// import s from './App.css';
+import React from 'react';
+import s from './App.css';
 import Form from './components/Form';
 import ContactsList from './components/ContactsList';
 import Filter from './components/Filter';
 
 function App() {
   return (
-    <App>
-      <h1>Phonebook</h1>
-      <Form />
-      <Filter />
-      <ContactsList />
-    </App>
+    <>
+      <div className={s.container}>
+        <h1>PHONEBOOK</h1>
+        <Form />
+        <Filter />
+        <ContactsList />
+      </div>
+    </>
   );
 }
 
