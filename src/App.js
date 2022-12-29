@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import s from "./App.css";
-import Form from "./components/Form";
-import ContactsList from "./components/ContactsList";
-import Filter from "./components/Filter";
+// import React, { Component } from 'react';
+// import s from './App.css';
+import Form from './components/Form';
+import ContactsList from './components/ContactsList';
+import Filter from './components/Filter';
 
 function App() {
   return (

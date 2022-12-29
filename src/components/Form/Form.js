@@ -1,22 +1,22 @@
-// import React, { Component } from "react";
-import s from "./Form.module.css";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addContacts } from "../../redux/contactsReducer";
+// import React, { Component } from 'react';
+import s from './Form.module.css';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addContacts } from '../../redux/contactsReducer';
 
 function Form() {
-  const [name, setName] = useState("");
-  const [number, setNumber] = useState("");
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
 
   const dispatch = useDispatch();
 
-  function handelInputChange(event) {
-    switch (event.currentTarget.name) {
-      case "name":
-        setName(event.currentTarget.value);
+  function handelInputChange(e) {
+    switch (e.currentTarget.name) {
+      case 'name':
+        setName(e.currentTarget.value);
         break;
-      case "number":
-        setNumber(event.currentTarget.value);
+      case 'number':
+        setNumber(e.currentTarget.value);
         break;
       default:
         return;
@@ -24,12 +24,12 @@ function Form() {
   }
 
   function reset() {
-    setName("");
-    setNumber("");
+    setName('');
+    setNumber('');
   }
 
-  function handelSubmit(event) {
-    event.preventDefault();
+  function handelSubmit(e) {
+    e.preventDefault();
     dispatch(addContacts(name, number));
     reset();
   }
